@@ -1,0 +1,5 @@
+.pill {
+  padding: 0 1rem;
+  background-color: hsla(0, 0%, 100%, 0.1);
+  border-radius: 10000px;
+}
