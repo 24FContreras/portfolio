@@ -68,6 +68,18 @@ header .btn:hover {
   gap: 1rem;
 }
 
+.link-icon {
+  vertical-align: middle;
+  font-size: 1.75rem;
+  color: white;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+.link-icon:hover {
+  color: var(--primary);
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -162,7 +174,7 @@ h4 {
 }
 
 /* MEDIA QUERIES */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1000px) {
   header {
     padding: 4rem;
     grid-template-columns: 1fr 1fr;

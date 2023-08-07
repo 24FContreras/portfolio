@@ -21,7 +21,6 @@ const Home = () => {
     "Tailwind CSS",
     "Sass",
     "PostgreSQL",
-    "Mongo DB",
     "React",
     "Node.JS",
     "Express",
@@ -55,11 +54,20 @@ const Home = () => {
             >
               {language[language.mode].header.button}
             </a>
-            {/* <AiFillGithub className="link-icon" />
-            <AiFillLinkedin className="link-icon" /> */}
+            <a
+              href=""
+              aria-label="Ver mi perfil de Github | Go to my Github profile"
+            >
+              <AiFillGithub className="link-icon" aria-hidden="true" />
+            </a>
+            <a
+              href=""
+              aria-label="Ver mi perfil de linkedIn | Go to my linkedIn profile"
+            >
+              <AiFillLinkedin className="link-icon" aria-hidden="true" />
+            </a>
           </div>
         </div>
-        <div></div>
       </header>
 
       <main>
