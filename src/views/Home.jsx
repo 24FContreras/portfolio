@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import "./../assets/css/Home.css";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { useLanguageContext } from "../context/LanguageContext";
 
 //IMAGES
 import wct from "./../assets/img/projects/worldCupTracker.png";
@@ -28,12 +29,12 @@ const Home = () => {
     "Wordpress",
   ];
 
-  const learning = ["Next", "Vue", "TypeScript"];
+  const { language } = useLanguageContext();
 
   const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
 
   const scrollTo = (ref) => {
-    console.log("click");
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -41,14 +42,9 @@ const Home = () => {
     <>
       <header>
         <div>
-          <h1>Hi! I'm Franco Contreras</h1>
-          <p>Web Developer from Santiago de Chile</p>
-          <p>
-            I'm a passionate full-stack javascript developer oriented to make
-            great, useful websites for the community. My current project is
-            designing and developing a website for children's music band
-            "Acuarela".
-          </p>
+          <h1>{language[language.mode].header.title}</h1>
+          <p>{language[language.mode].header.subtitle}</p>
+          <p>{language[language.mode].header.body}</p>
           <div className="header-links">
             <a
               className="btn"
@@ -57,71 +53,64 @@ const Home = () => {
               }}
               aria-label="Travel to about section"
             >
-              Let's go!
+              {language[language.mode].header.button}
             </a>
-            <AiFillGithub className="link-icon" />
-            <AiFillLinkedin className="link-icon" />
+            {/* <AiFillGithub className="link-icon" />
+            <AiFillLinkedin className="link-icon" /> */}
           </div>
         </div>
         <div></div>
       </header>
 
       <main>
-        <section ref={aboutRef} className="about" aria-label="about">
+        <section ref={aboutRef} className="about" aria-label="about" id="about">
           <div className="about-deco"></div>
           <div>
-            <h2>About me</h2>
+            <h2>{language[language.mode].about.title}</h2>
 
-            <p>
-              I started my journey as a self-learner, but then I decided to take
-              another step and get formal studies in web development. For the
-              last two years I've been developing projects in vanilla JS, React
-              and Wordpress.
-            </p>
-            <p>
-              I thrive to build useful and accessible websites, writing clean
-              code with focus on the future.
-            </p>
+            <p>{language[language.mode].about.paragraph1}</p>
+            <p>{language[language.mode].about.paragraph2}</p>
 
-            <h2>Tech and Skills</h2>
+            <h2>{language[language.mode].skills.title}</h2>
             <ul className="skill-pills">
               {skills.map((skill) => (
-                <ListPill content={skill} />
+                <ListPill key={skill} content={skill} />
               ))}
             </ul>
           </div>
         </section>
 
-        <section className="projects">
-          <h2>Projects</h2>
+        <section ref={projectsRef} className="projects" id="projects">
+          <h2>{language[language.mode].projects.title}</h2>
 
           <div className="projects-grid">
             <ProjectCard
-              cardTitle="Booket Market"
-              description="E-commerce inspired project developed using PERN Stack
-              (PostgreSQL, Express, React and Node JS)"
+              cardTitle={language[language.mode].projects.list[0].title}
+              description={language[language.mode].projects.list[0].description}
               image={booketMarket}
               preview="https://booketmarket.netlify.app/"
               githubCode="https://github.com/24FContreras/DL_booket"
+              buttonsText={language[language.mode].projects.list[0].buttons}
             />
 
             <ProjectCard
-              cardTitle="World Cup Tracker"
-              description="Tracker for the latest world cup Qatar 2022. Developed with
-              React. Powered by estiens Public API World Cup Json"
+              cardTitle={language[language.mode].projects.list[1].title}
+              description={language[language.mode].projects.list[1].description}
               image={wct}
               position="center"
               preview="https://worldcuptracker.netlify.app/"
               githubCode="https://github.com/24FContreras/React1-WorldCupTracker"
+              buttonsText={language[language.mode].projects.list[1].buttons}
             />
 
             <ProjectCard
-              cardTitle="Calculator"
-              description="Calculator project made for The Odin Project. Coded with HTML, CSS and vanilla JavaScript"
+              cardTitle={language[language.mode].projects.list[2].title}
+              description={language[language.mode].projects.list[2].description}
               image={calculator}
               position="center"
               preview="https://24fcontreras.github.io/TOP-Calculator/"
               githubCode="https://github.com/24FContreras/TOP-Calculator"
+              buttonsText={language[language.mode].projects.list[2].buttons}
             />
           </div>
         </section>

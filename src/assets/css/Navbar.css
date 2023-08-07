@@ -1,6 +1,6 @@
 .navbar {
   width: 100%;
-  height: 3rem;
+  height: 3.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,6 +31,11 @@
 
   display: grid;
   place-content: center;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
 }
 
 .nav-brand {
@@ -67,4 +72,22 @@
 .navlink:hover::after,
 .navlink.active::after {
   width: 100%;
+}
+
+.language-button {
+  background-color: var(--primary);
+  color: var(--background);
+  border: unset;
+  border-radius: 1000px;
+  padding: 0.3rem 1rem;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+.language-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.language-button:active {
+  background-color: gainsboro;
 }

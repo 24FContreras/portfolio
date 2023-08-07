@@ -6,6 +6,7 @@ const ProjectCard = ({
   image,
   preview,
   githubCode,
+  buttonsText,
 }) => {
   return (
     <>
@@ -19,10 +20,10 @@ const ProjectCard = ({
 
         <div className="card-links">
           <a href={preview} target="_blank" rel="noopener noreferrer">
-            Live preview
+            {buttonsText[0]}
           </a>
           <a href={githubCode} target="_blank" rel="noopener noreferrer">
-            Code
+            {buttonsText[1]}
           </a>
         </div>
       </div>
