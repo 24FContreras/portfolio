@@ -9,6 +9,7 @@ const Navbar = () => {
     { name: "home", href: "#" },
     { name: "about", href: "#about" },
     { name: "projects", href: "#projects" },
+    { name: "contact", href: "#contact" },
   ];
 
   const { language, setLanguage } = useLanguageContext();

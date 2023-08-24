@@ -9,12 +9,17 @@ const languageOptions = {
       home: "Home",
       about: "About",
       projects: "Projects",
+      contact: "Contact",
     },
     header: {
       title: "Hi! I'm Franco Contreras",
       subtitle: "Web Developer from Santiago de Chile",
       body: `I'm a passionate full-stack javascript developer oriented to make great, useful websites for the community. My current project is designing and developing a website for children's music band "Acuarela".`,
       button: "Let's go!",
+      cv: {
+        text: "Resume",
+        link: "/resume/en",
+      },
     },
     about: {
       title: "About me",
@@ -49,18 +54,32 @@ const languageOptions = {
         },
       ],
     },
+    contact: {
+      title: "Get in touch",
+      body: "If you have a project or just want to ask questions, please email me to 24.f.contreras@gmail.com. I'll respond as soon as possible!",
+      button: "Let's talk",
+    },
+    footer: {
+      description:
+        "Designed and coded by Franco Contreras. Built in React and deployed with Netlify.",
+    },
   },
   spanish: {
     navbar: {
       home: "Inicio",
       about: "Sobre mi",
       projects: "Proyectos",
+      contact: "Contacto",
     },
     header: {
       title: "¡Hola! Soy Franco Contreras",
       subtitle: "Desarrollador Web de Santiago de Chile",
-      body: `Soy un desarrollador web apasionado, orientado a construir sitios buenos y útiles para la comunidad. Mi proyecto actual es diseñar y desarrollar un sitio web renovado para la banda de música infantil "Acuarela".`,
+      body: `Soy un desarrollador web apasionado, orientado a construir sitios útiles para la comunidad. Mi proyecto actual es diseñar y desarrollar un sitio web renovado para la banda de música infantil "Acuarela".`,
       button: "¡Vamos!",
+      cv: {
+        text: "CV",
+        link: "/resume/es",
+      },
     },
     about: {
       title: "Sobre mi",
@@ -94,6 +113,15 @@ const languageOptions = {
           buttons: ["Vista en vivo", "Código"],
         },
       ],
+    },
+    contact: {
+      title: "Contáctame",
+      body: "Si tienes alguna idea o proyecto, o solamente quieres consultar algo, por favor envíame un correo a la dirección 24.f.contreras@gmail.com. ¡Responderé tan pronto como sea posible!",
+      button: "Conversemos",
+    },
+    footer: {
+      description:
+        "Diseñado y programado por Franco Contreras. Construído en React y desplegado con Netlify.",
     },
   },
 };

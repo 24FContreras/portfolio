@@ -5,6 +5,8 @@ import Root from "../layouts/Root.layout";
 
 //VIEWS
 import Home from "../views/Home";
+import ResumeES from "../views/ResumeES";
+import ResumeEN from "../views/ResumeEN";
 
 const router = createBrowserRouter([
   {
@@ -14,13 +16,21 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        // loader: teamLoader,
       },
-      // {
-      //   path: "team",
-      //   element: <Team />,
-      //   // loader: teamLoader,
-      // },
+      ,
+    ],
+  },
+  {
+    path: "/resume",
+    children: [
+      {
+        path: "es",
+        element: <ResumeES />,
+      },
+      {
+        path: "en",
+        element: <ResumeEN />,
+      },
     ],
   },
 ]);

@@ -54,6 +54,7 @@ header .btn {
   padding: 0.5rem 1.5rem;
   transition: 0.1s ease;
   cursor: pointer;
+  text-decoration: none;
 }
 
 header .btn:hover {
@@ -86,7 +87,7 @@ main {
 }
 
 main section {
-  padding: 2rem;
+  padding: 3.5rem 2rem;
   min-height: 100vh;
 }
 
@@ -162,15 +163,80 @@ main section {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
+}
+
+/* CONTACT */
+.contact {
+  min-height: 50vh;
+  background-color: rgb(31, 29, 29);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-title {
+  border: none;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.email-link {
+  margin-top: 1.75rem;
+  background-color: var(--primary);
+  color: var(--background);
+  border: unset;
+  border-radius: 1000px;
+  padding: 0.3rem 1rem;
+  transition: 0.1s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  background-color: var(--primary-dark);
+}
+
+.email-link:active {
+  background-color: gainsboro;
 }
 
 footer {
   padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-h4 {
-  margin-bottom: 1rem;
+.social-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.social-button {
+  height: 2.5rem;
+  aspect-ratio: 1;
+  border: solid 2px white;
+  border-radius: 100%;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.social-button:hover {
+  color: var(--background);
+  background-color: white;
+  border-color: white;
 }
 
 /* MEDIA QUERIES */
@@ -186,5 +252,10 @@ h4 {
 
   .about {
     grid-template-columns: 1fr 1fr;
+  }
+
+  footer {
+    align-items: flex-start;
+    text-align: start;
   }
 }

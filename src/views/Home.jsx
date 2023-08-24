@@ -1,6 +1,9 @@
 import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./../assets/css/Home.css";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { BiLogoGmail } from "react-icons/bi";
+
 import { useLanguageContext } from "../context/LanguageContext";
 
 //IMAGES
@@ -54,18 +57,15 @@ const Home = () => {
             >
               {language[language.mode].header.button}
             </a>
-            <a
-              href=""
-              aria-label="Ver mi perfil de Github | Go to my Github profile"
+
+            <Link
+              target="blank"
+              rel="noopener noreferrer"
+              to={language[language.mode].header.cv.link}
+              className="btn"
             >
-              <AiFillGithub className="link-icon" aria-hidden="true" />
-            </a>
-            <a
-              href=""
-              aria-label="Ver mi perfil de linkedIn | Go to my linkedIn profile"
-            >
-              <AiFillLinkedin className="link-icon" aria-hidden="true" />
-            </a>
+              {language[language.mode].header.cv.text}
+            </Link>
           </div>
         </div>
       </header>
@@ -122,12 +122,55 @@ const Home = () => {
             />
           </div>
         </section>
+
+        <section className="contact" id="contact">
+          <h2 className="contact-title">
+            {language[language.mode].contact.title}
+          </h2>
+          <p>{language[language.mode].contact.body}</p>
+
+          <a
+            class="email-link"
+            href="mailto:24.f.contreras@gmail.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {language[language.mode].contact.button}
+          </a>
+        </section>
       </main>
 
-      <footer style={{ background: "black" }}>
-        <h4>Get in contact</h4>
-        <p>24.f.contreras@gmail.com</p>
-        <p>24FContreras</p>
+      <footer>
+        <h3>FC</h3>
+        <p>{language[language.mode].footer.description}</p>
+
+        <div className="social-buttons">
+          <a
+            href="mailto:24.f.contreras@gmail.com"
+            className="social-button"
+            aria-label="Send email to Franco Contreras"
+          >
+            <BiLogoGmail aria-hidden="true" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/24fcontreras"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-button"
+            aria-label="Visit my linkedIn profile"
+          >
+            <AiFillLinkedin aria-hidden="true" />
+          </a>
+          <a
+            href="https://github.com/24FContreras"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-button"
+            aria-label="Visit my github profile"
+          >
+            <AiFillGithub aria-hidden="true" />
+          </a>
+        </div>
       </footer>
     </>
   );
