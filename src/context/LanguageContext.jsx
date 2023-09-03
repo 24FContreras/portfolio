@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
+
+import wct from "./../assets/img/projects/worldCupTracker.png";
+import booketMarket from "./../assets/img/projects/booketMarket.png";
+import calculator from "./../assets/img/projects/calculatorOdinProject.png";
+import pokeFinder from "./../assets/img/projects/pokeFinder.png";
+import sistemaSeguimiento from "./../assets/img/projects/sistemaSeguimiento.png";
 
 export const LanguageContext = createContext();
 
@@ -39,18 +45,43 @@ const languageOptions = {
           description:
             "E-commerce inspired project developed using PERN Stack (PostgreSQL, Express, React and Node JS)",
           buttons: ["Live preview", "Code"],
+          preview: "https://booketmarket.netlify.app/",
+          githubCode: "https://github.com/24FContreras/DL_booket",
+          thumbnail: booketMarket,
         },
         {
           title: "World Cup Tracker",
           description:
             "Tracker for the latest world cup Qatar 2022. Developed with React. Powered by estiens Public API World Cup Json",
           buttons: ["Live preview", "Code"],
+          preview: "https://worldcuptracker.netlify.app/",
+          githubCode: "https://github.com/24FContreras/React1-WorldCupTracker",
+          thumbnail: wct,
         },
         {
           title: "Calculator",
           description:
             "Calculator project made for The Odin Project. Coded with HTML, CSS and vanilla JavaScript",
           buttons: ["Live preview", "Code"],
+          preview: "https://24fcontreras.github.io/TOP-Calculator/",
+          githubCode: "https://github.com/24FContreras/TOP-Calculator",
+          thumbnail: calculator,
+        },
+        {
+          title: "Pokefinder",
+          description:
+            "Minimalist pokedex project. Coded with Vue JS and the public API PokeAPI",
+          buttons: ["Live preview", "Code"],
+          preview: "https://vuepokefinder.netlify.app//",
+          githubCode: "https://github.com/24FContreras/vue_pokedex",
+          thumbnail: pokeFinder,
+        },
+        {
+          title: "Follow-up system",
+          description:
+            "Desktop app OSPAMFRA SPA. Refence image for security reasons. The app allows emision of budgets, invoice registering and follow-up, as well as maintaining an organized repository of documents. Developed with Electron JS using React as frontend library.",
+          buttons: [],
+          thumbnail: sistemaSeguimiento,
         },
       ],
     },
@@ -99,18 +130,44 @@ const languageOptions = {
           description:
             "Proyecto con temática E-Commerce desarrollo mediante el stack PERN (PostgreSQL, Express, React and Node JS)",
           buttons: ["Vista en vivo", "Código"],
+          preview: "https://booketmarket.netlify.app/",
+          githubCode: "https://github.com/24FContreras/DL_booket",
+          thumbnail: booketMarket,
         },
         {
           title: "World Cup Tracker",
           description:
             "Tracker para la última copa del mundo Qatar 2022. Desarrollado con React. Data obtenida desde la API publica de estiens, World Cup Json",
           buttons: ["Vista en vivo", "Código"],
+          preview: "https://worldcuptracker.netlify.app/",
+          githubCode: "https://github.com/24FContreras/React1-WorldCupTracker",
+          thumbnail: wct,
         },
         {
           title: "Calculadora",
           description:
             "Calculadora desarrollada para The Odin Project. Construído con HTML, CSS y vanilla JavaScript",
           buttons: ["Vista en vivo", "Código"],
+          preview: "https://24fcontreras.github.io/TOP-Calculator/",
+          githubCode: "https://github.com/24FContreras/TOP-Calculator",
+          thumbnail: calculator,
+        },
+        {
+          title: "Pokefinder",
+          description:
+            "Proyecto de Pokedex minimalista. Construído con Vue JS y la API pública PokeAPI",
+          buttons: ["Live preview", "Code"],
+          preview: "https://vuepokefinder.netlify.app//",
+          githubCode: "https://github.com/24FContreras/vue_pokedex",
+          thumbnail: pokeFinder,
+        },
+        {
+          title: "Sistema de seguimiento",
+          description:
+            "Aplicación de escritorio para OSPAMFRA SPA. Imagen referencial por motivos de seguridad. La aplicación permite emitir presupuestos, registrar facturas y realizar un seguimientos de estos, como también subir los documentos a un repositorio organizado. Desarrollada con Electron JS utilizando React como biblioteca frontend.",
+          buttons: [],
+
+          thumbnail: sistemaSeguimiento,
         },
       ],
     },

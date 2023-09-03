@@ -18,14 +18,16 @@ const ProjectCard = ({
           <p>{description}</p>
         </div>
 
-        <div className="card-links">
-          <a href={preview} target="_blank" rel="noopener noreferrer">
-            {buttonsText[0]}
-          </a>
-          <a href={githubCode} target="_blank" rel="noopener noreferrer">
-            {buttonsText[1]}
-          </a>
-        </div>
+        {buttonsText.length !== 0 && (
+          <div className="card-links">
+            <a href={preview} target="_blank" rel="noopener noreferrer">
+              {buttonsText[0]}
+            </a>
+            <a href={githubCode} target="_blank" rel="noopener noreferrer">
+              {buttonsText[1]}
+            </a>
+          </div>
+        )}
       </div>
     </>
   );

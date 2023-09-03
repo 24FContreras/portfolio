@@ -1,15 +1,10 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "./../assets/css/Home.css";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
 
 import { useLanguageContext } from "../context/LanguageContext";
-
-//IMAGES
-import wct from "./../assets/img/projects/worldCupTracker.png";
-import booketMarket from "./../assets/img/projects/booketMarket.png";
-import calculator from "./../assets/img/projects/calculatorOdinProject.png";
 
 //COMPONENTS
 import ProjectCard from "../components/ProjectCard";
@@ -25,10 +20,14 @@ const Home = () => {
     "Sass",
     "PostgreSQL",
     "React",
+    "Material UI",
+    "Mantine",
     "Node.JS",
     "Express",
     "Sequelize",
     "Wordpress",
+    "Vue JS",
+    "Docker",
   ];
 
   const { language } = useLanguageContext();
@@ -92,34 +91,17 @@ const Home = () => {
           <h2>{language[language.mode].projects.title}</h2>
 
           <div className="projects-grid">
-            <ProjectCard
-              cardTitle={language[language.mode].projects.list[0].title}
-              description={language[language.mode].projects.list[0].description}
-              image={booketMarket}
-              preview="https://booketmarket.netlify.app/"
-              githubCode="https://github.com/24FContreras/DL_booket"
-              buttonsText={language[language.mode].projects.list[0].buttons}
-            />
-
-            <ProjectCard
-              cardTitle={language[language.mode].projects.list[1].title}
-              description={language[language.mode].projects.list[1].description}
-              image={wct}
-              position="center"
-              preview="https://worldcuptracker.netlify.app/"
-              githubCode="https://github.com/24FContreras/React1-WorldCupTracker"
-              buttonsText={language[language.mode].projects.list[1].buttons}
-            />
-
-            <ProjectCard
-              cardTitle={language[language.mode].projects.list[2].title}
-              description={language[language.mode].projects.list[2].description}
-              image={calculator}
-              position="center"
-              preview="https://24fcontreras.github.io/TOP-Calculator/"
-              githubCode="https://github.com/24FContreras/TOP-Calculator"
-              buttonsText={language[language.mode].projects.list[2].buttons}
-            />
+            {language[language.mode].projects.list.map((item) => (
+              <ProjectCard
+                key={item.title}
+                cardTitle={item.title}
+                description={item.description}
+                image={item.thumbnail}
+                preview={item.preview}
+                githubCode={item.githubCode}
+                buttonsText={item.buttons}
+              />
+            ))}
           </div>
         </section>
 
@@ -130,7 +112,7 @@ const Home = () => {
           <p>{language[language.mode].contact.body}</p>
 
           <a
-            class="email-link"
+            className="email-link"
             href="mailto:24.f.contreras@gmail.com"
             rel="noopener noreferrer"
             target="_blank"
